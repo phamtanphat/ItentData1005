@@ -14,5 +14,10 @@
         android:layout_width="wrap_content"
         android:id="@+id/buttonIntentString"
         android:text="Send String"/>
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/buttonIntentInteger"
+        android:text="Send integer"/>
 
 </LinearLayout>

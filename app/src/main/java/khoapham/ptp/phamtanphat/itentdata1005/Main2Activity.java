@@ -14,12 +14,17 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        //1 : Chuoi
+//        Intent intent = getIntent();
+//        if (intent.hasExtra("chuoi")){
+//            String chuoi = intent.getStringExtra("chuoi");
+//            Toast.makeText(this, chuoi, Toast.LENGTH_SHORT).show();
+//        }
+//        2 : So
         Intent intent = getIntent();
-        if (intent.hasExtra("chuoi")){
-            String chuoi = intent.getStringExtra("chuoi");
-            Toast.makeText(this, chuoi, Toast.LENGTH_SHORT).show();
+        if (intent.hasExtra("so")){
+            Integer number = intent.getIntExtra("so", Integer.MIN_VALUE);
+            Toast.makeText(this, number + "", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 }
