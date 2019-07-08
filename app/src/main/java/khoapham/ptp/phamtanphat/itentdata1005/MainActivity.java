@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         btnIntentObject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Person person = new Person("Phat");
                 Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-
+                intent.putExtra("object", (Serializable) person);
+                startActivity(intent);
             }
         });
     }
