@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/buttonIntentString"
-        android:text="Send String"
-        />
+        android:text="Send String"/>
 
 </LinearLayout>
