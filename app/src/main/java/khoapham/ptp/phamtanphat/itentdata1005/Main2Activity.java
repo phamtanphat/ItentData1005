@@ -15,16 +15,23 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
 //        1 : Chuoi
-        Intent intent = getIntent();
-        if (intent.hasExtra("chuoi")){
-            String chuoi = intent.getStringExtra("chuoi");
-            Toast.makeText(this, chuoi, Toast.LENGTH_SHORT).show();
-        }
+//        Intent intent = getIntent();
+//        if (intent.hasExtra("chuoi")){
+//            String chuoi = intent.getStringExtra("chuoi");
+//            Toast.makeText(this, chuoi, Toast.LENGTH_SHORT).show();
+//        }
 //        2 : So
 //        Intent intent = getIntent();
 //        if (intent.hasExtra("so")){
 //            Integer number = intent.getIntExtra("so", Integer.MIN_VALUE);
 //            Toast.makeText(this, number + "", Toast.LENGTH_SHORT).show();
 //        }
+        //3 : Object
+        Intent intent = getIntent();
+        if (intent.hasExtra("object")){
+            Person person = (Person) intent.getSerializableExtra("object");
+            Toast.makeText(this, person.name, Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
