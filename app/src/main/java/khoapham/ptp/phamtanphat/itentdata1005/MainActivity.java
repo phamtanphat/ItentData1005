@@ -40,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Person person = new Person("Phat");
                 Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("object", (Serializable) person);
+                intent.putExtra("object",person);
                 startActivity(intent);
             }
         });
+        //ArrayList<Person> mangperson
     }
     //generic type
     private <P> void intentdata(String key , P value){
