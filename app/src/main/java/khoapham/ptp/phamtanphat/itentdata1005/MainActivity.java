@@ -5,11 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnItentString,btnIntentInteger;
+    Button btnItentString,btnIntentInteger,btnIntentObject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         btnItentString = findViewById(R.id.buttonIntentString);
         btnIntentInteger = findViewById(R.id.buttonIntentInteger);
+        btnIntentObject = findViewById(R.id.buttonIntentObject);
 
         btnItentString.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 intentdata("chuoi","hello main");
             }
         });
@@ -29,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intentdata("so",1);
+            }
+        });
+        btnIntentObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+
             }
         });
     }
