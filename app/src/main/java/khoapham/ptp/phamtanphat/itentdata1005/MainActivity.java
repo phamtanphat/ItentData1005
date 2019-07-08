@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     Button btnItentString,btnIntentInteger;
     @Override
@@ -19,18 +21,27 @@ public class MainActivity extends AppCompatActivity {
         btnItentString.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("chuoi","Hello main");
-                startActivity(intent);
+
+                intentdata("chuoi","hello main");
             }
         });
         btnIntentInteger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                intent.putExtra("so",1);
-                startActivity(intent);
+                intentdata("so",1);
             }
         });
+    }
+    //generic type
+    private <P> void intentdata(String key , P value){
+        Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+        if (value instanceof String){
+            intent.putExtra(key,(String) value);
+        }
+        if (value instanceof Integer){
+            intent.putExtra(key,(Integer) value);
+        }
+
+        startActivity(intent);
     }
 }
